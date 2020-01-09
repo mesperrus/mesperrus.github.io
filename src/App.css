@@ -1,38 +1,134 @@
-.App {
+html, body {
+  background-color: #262626;
+  font-family: 'Noto Sans', sans-serif;
+
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
   text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #262626;
+  font-weight: 400;
+  font-size: 4.5em;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  color: #262626;
+  font-weight: 800;
+  font-size: 1.3em;
+
+  margin: 30px 50px 30px 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+i {
+  margin: 0px;
+  padding: 0px;
+  align-self: bottom;
+}
+
+
+#root {
+  width: 100%;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#inner {
+  width: 720px;
+  height: 720px;
+  clip-path: polygon(100% 0, 0 20%, 20% 100%, 100% 70%);
+  background-color: #fff5d9;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#upper {
+  width: 100%;
+  height: 30%;
+
+  margin-top: 10px;
+  margin-left: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#mid {
+  width: 100%;
+  height: 40%;
+}
+
+#foot {
+  width: 35%;
+  height: 10%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-left: 150px;
+}
+
+#container {
+  width: 100vw;
+  max-width: 1080px;
+}
+
+#header {
+  background-color: #fff5d9;
+}
+
+
+.naviItem {
+  text-decoration: none;
+  color: #262626;
+  font-weight: 800;
+  font-size: 1.8em;
+}
+
+.vertRightAlign {
+  text-align: right;
+}
+
+.horCenterAlign {
+  display: inline;
+  margin: 25px;
+}
+
+
+#github {
+  color: #767676;
+}
+
+#linkedin {
+  color: #2867b2;
+}
+
+#insta {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+          /* Also define standard property for compatibility */
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  font-size: 48px; /* change this to change the size*/
 }

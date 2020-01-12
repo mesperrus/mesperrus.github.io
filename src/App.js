@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,10 +8,19 @@ import {
 // import logo from './logo.svg';
 import './App.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faGithub, faLinkedinIn, faInstagram); 
 
 
-export default function App() {
+export default class App extends React.Component {
+  componentDidMount(){
+    document.title = "Mesa Perry";
+  }
+
+  render() {
     return (
         <Router>
             <Switch>
@@ -28,27 +36,28 @@ export default function App() {
             </Switch>
         </Router>
     );
+  }
 }
 
 class Workbar extends React.Component {
     render() {
-        if (this.props.orientation == "vertical") {
+        if (this.props.orientation === "vertical") {
             return (
-                <ul style={{listStyleType: "none"}}>
-                    <li class="vertRightAlign"><Link class="naviItem" to="/">About</Link></li>
-                    <li class="vertRightAlign"><Link class="naviItem" to="/experience">Experience</Link></li>
-                    <li class="vertRightAlign"><Link class="naviItem" to="/portfolio">Portfolio</Link></li>
-                    <li class="vertRightAlign"><a class="naviItem" target="_blank" href="https://drive.google.com/open?id=1yqMO3pYSPpTFIEAjudw-uVI-nT-kwESp">Resume</a></li>
+                <ul>
+                    <li className="vertRightAlign"><Link className="naviItem clickable" to="/">About</Link></li>
+                    <li className="vertRightAlign"><Link className="naviItem clickable" to="/experience">Experience</Link></li>
+                    <li className="vertRightAlign"><Link className="naviItem clickable" to="/portfolio">Portfolio</Link></li>
+                    <li className="vertRightAlign"><a className="naviItem clickable" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/open?id=1yqMO3pYSPpTFIEAjudw-uVI-nT-kwESp">Resume</a></li>
                 </ul>
             );
         }
-        else if (this.props.orientation == "horizontal") {
+        else if (this.props.orientation === "horizontal") {
             return (
-                <ul style={{listStyleType: "none"}}>
-                    <li class="horCenterAlign"><Link class="naviItem" to="/">About</Link></li>
-                    <li class="horCenterAlign"><Link class="naviItem" to="/experience">Experience</Link></li>
-                    <li class="horCenterAlign"><Link class="naviItem" to="/portfolio">Portfolio</Link></li>
-                    <li class="horCenterAlign"><a class="naviItem" target="_blank" href="https://drive.google.com/open?id=1yqMO3pYSPpTFIEAjudw-uVI-nT-kwESp">Resume</a></li>
+                <ul>
+                    <li className="horCenterAlign"><Link className="naviItem clickable tile" to="/">About</Link></li>
+                    <li className="horCenterAlign"><Link className="naviItem clickable tile" to="/experience">Experience</Link></li>
+                    <li className="horCenterAlign"><Link className="naviItem clickable tile" to="/portfolio">Portfolio</Link></li>
+                    <li className="horCenterAlign"><a className="naviItem clickable tile" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/open?id=1yqMO3pYSPpTFIEAjudw-uVI-nT-kwESp">Resume</a></li>
                 </ul>
             );
         }
@@ -64,13 +73,13 @@ function About() {
                 <Workbar orientation="vertical"/>
             </div>
             <div id="mid">
-                <p>Ayo -- welcome to my humble abode. I'm a student and software developer from University of Illinois Urbana-Champaign.</p>
-                <p>My experience includes a machine learning internship at ST Engineering and various personal projects. Feel free to visit some of my work above, or check me out on other sites below.</p>
+                <p className="aboutText">Ayo -- welcome to my humble abode. I'm a student and software developer from University of Illinois Urbana-Champaign.</p>
+                <p className="aboutText">My experience includes a machine learning internship at ST Engineering and various personal projects. Feel free to visit some of my work above, or check me out on other sites below.</p>
             </div>
             <div id="foot">
-                <a href="https://github.com/mesperrus/"><FontAwesomeIcon icon="angry" /></a>
-                <a href="https://www.linkedin.com/in/mesa-perry-558715193/"><i class="fab fa-linkedin fa-3x" id="linkedin"></i></a>
-                <a href="https://www.instagram.com/mesa.perry/"><i class="fa fa-instagram" id="insta" aria-hidden="true"></i></a>
+                <a href="https://github.com/mesperrus/"><FontAwesomeIcon icon={['fab', 'github']} size="3x" className="clickable" /></a>
+                <a href="https://www.linkedin.com/in/mesa-perry-558715193/"><FontAwesomeIcon icon={['fab', 'linkedin-in']} size="3x" className="clickable" /></a>
+                <a href="https://www.instagram.com/mesa.perry/"><FontAwesomeIcon icon={['fab', 'instagram']} size="3x" className="clickable" /></a>
             </div>
         </div>
     );
@@ -81,7 +90,10 @@ function Experience() {
     return (
         <div id="container">
             <div id="header">
-                <Workbar orientation="horizontal" />
+              <Workbar orientation="horizontal" />
+            </div>
+            <div id="content">
+              <p>Coming soon...</p>
             </div>
         </div>
     );
@@ -93,6 +105,9 @@ function Portfolio() {
         <div id="container">
             <div id="header">
                 <Workbar orientation="horizontal" />
+            </div>
+            <div id="content">
+              <p>Coming soon...</p>
             </div>
         </div>
     );

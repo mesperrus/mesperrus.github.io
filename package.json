@@ -1,8 +1,8 @@
 {
-  "homepage": "http://mesperrus.github.io/website/",
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mesperrus.me",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",

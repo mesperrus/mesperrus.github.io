@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <Router basename="/">
         <Switch>
           <Route path="/experience">
             <Experience />

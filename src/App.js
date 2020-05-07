@@ -47,7 +47,7 @@ class Workbar extends React.Component {
           <li className="vertRightAlign"><Link className="naviItem clickable" to="/">About</Link></li>
           <li className="vertRightAlign"><Link className="naviItem clickable" to="/experience">Experience</Link></li>
           <li className="vertRightAlign"><Link className="naviItem clickable" to="/portfolio">Portfolio</Link></li>
-          <li className="vertRightAlign"><a className="naviItem clickable" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/open?id=1gxt6W-gEsK1tu5ikDbJnU9wjn1tme1Rl">Resume</a></li>
+          <li className="vertRightAlign"><a className="naviItem clickable" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/open?id=1gxt6W-gEsK1tu5ikDbddddwjn1tme1Rl">Resume</a></li>
         </ul>
       );
     }
@@ -57,7 +57,7 @@ class Workbar extends React.Component {
           <li className="horCenterAlign"><Link className="naviItem clickable tile" to="/">About</Link></li>
           <li className="horCenterAlign"><Link className="naviItem clickable tile" to="/experience">Experience</Link></li>
           <li className="horCenterAlign"><Link className="naviItem clickable tile" to="/portfolio">Portfolio</Link></li>
-          <li className="horCenterAlign"><a className="naviItem clickable tile" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/open?id=1gxt6W-gEsK1tu5ikDbJnU9wjn1tme1Rl">Resume</a></li>
+          <li className="horCenterAlign"><a className="naviItem clickable tile" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/open?id=1gxt6W-gEsK1tu5ikDbddddwjn1tme1Rl">Resume</a></li>
         </ul>
       );
     }

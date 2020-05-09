@@ -90,42 +90,43 @@ class About extends React.Component {
   render() {
     const isMobile = window.innerWidth <= 720;
 
-    if (!isMobile) {
-      return (
-        <div className="color1 container">
-          <div className="color2 inner">
-            <div className="vertical">
-              <NavigationBar />
-              <h1 className="text_color1 title">Mesa Perry</h1>
-            </div>
-            <p className="info">
-              Ayo -- welcome to my humble abode.
-              I'm a student and software developer from
-              University of Illinois Urbana-Champaign.
-            </p>
-            <p className="info">
-              My experience includes a deep learning internship at
-              ST Engineering and various personal projects.
-              Feel free to visit some of my work above,
-              or check me out on other sites below.
-            </p>
-            <SocialBar />
-          </div>
-        </div>
-      );
-    }
+    // if (!isMobile) {
+    //   document.getElementById("root").style.justifyContent = "start";
+    // }
+    // else {
+    // }
 
-    else {
-      return (
-        <h1>mobile</h1>
-      )
-    }
+    return (
+      <div className="color1 container">
+        <div className="color2 inner">
+          <div className="vertical">
+            <NavigationBar />
+            <h1 className="text_color1 title">Mesa Perry</h1>
+          </div>
+          <p className="info">
+            Ayo -- welcome to my humble abode.
+            I'm a student and software developer from
+            University of Illinois Urbana-Champaign.
+          </p>
+          <p className="info">
+            My experience includes a deep learning internship at
+            ST Engineering and various personal projects.
+            Recently I participated in HackIllinois 2020 and
+            won first place for Checkbook's challenge.
+            This summer I'll be interning as a SDE intern
+            at Amazon.
+            Feel free to visit some of my work above,
+            or check me out on other sites below.
+          </p>
+          <SocialBar />
+        </div>
+      </div>
+    );
   }
 }
 
 class Experience extends React.Component {
   render() {
-    // document.getElementById("root").style.justifyContent = "start";
     return (
       <div className="color1 container">
         <div className="color2 inner">
@@ -145,7 +146,6 @@ class Experience extends React.Component {
 
 class Portfolio extends React.Component {
   render() {
-    // document.getElementById("root").style.justifyContent = "start";
     return (
       <div className="color1 container">
         <div className="color2 inner">

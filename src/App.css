@@ -39,12 +39,12 @@ html, body {
 }
 
 .inner {
-  width: 480px;
-  height: 480px;
+  width: 100%;
+  max-width: 480px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -55,6 +55,7 @@ html, body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .vertical {
@@ -75,9 +76,9 @@ html, body {
 }
 
 .info {
-  width: 80%;
-  margin: 0;
   padding: 0;
+  width: 80%;
+  margin: 15px;
   font-size: 1.2em;
   text-align: center
 }

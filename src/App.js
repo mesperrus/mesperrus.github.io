@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 // import logo from './logo.svg';
 import './App.css';
 
@@ -58,6 +59,7 @@ class NavigationBar extends React.Component {
 
 class SocialBar extends React.Component {
   render() {
+    const { isOpen, onClose, message } = this.props;
     return (
       <div className="horizontal">
         <a href="https://github.com/mesperrus/">
@@ -104,7 +106,7 @@ class About extends React.Component {
             <h1 className="text_color1 title">Mesa Perry</h1>
           </div>
           <p className="info">
-            Ayo -- welcome to my humble abode.
+            Heyo -- welcome to my abode!
             I'm a student and software developer from
             University of Illinois Urbana-Champaign.
           </p>
@@ -114,7 +116,7 @@ class About extends React.Component {
             Recently I participated in HackIllinois 2020 and
             won first place for Checkbook's challenge.
             This summer I'll be interning as a SDE intern
-            at Amazon.
+            at Amazon Lab126.
             Feel free to visit some of my work above,
             or check me out on other sites below.
           </p>

@@ -23,6 +23,19 @@ export default class App extends React.Component {
   render() {
     return (
       <Router basename="/">
+        <RouteContainer />
+      </Router>
+    );
+  }
+}
+
+function RouteContainer() {
+  return (
+    <TransitionGroup>
+      <CSSTransition
+        timeout={{ enter: 300, exit: 300 }}
+        classNames={'fade'}
+      >
         <Switch>
           <Route path="/experience">
             <Experience />
@@ -34,10 +47,11 @@ export default class App extends React.Component {
             <About />
           </Route>
         </Switch>
-      </Router>
-    );
-  }
+      </CSSTransition>
+    </TransitionGroup>
+  );
 }
+
 
 class NavigationBar extends React.Component {
   render() {
@@ -59,7 +73,6 @@ class NavigationBar extends React.Component {
 
 class SocialBar extends React.Component {
   render() {
-    const { isOpen, onClose, message } = this.props;
     return (
       <div className="horizontal">
         <a href="https://github.com/mesperrus/">

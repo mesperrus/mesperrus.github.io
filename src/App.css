@@ -20,7 +20,23 @@
 
 /* ##################################################### */
 
+.title-enter {
+    opacity: 0.01;
+}
 
+.title-enter.title-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.title-exit {
+    opacity: 1;
+}
+
+.title-exit.title-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
 
 html, body {
   font-family: 'Noto Sans', sans-serif;

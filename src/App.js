@@ -23,33 +23,55 @@ export default class App extends React.Component {
   render() {
     return (
       <Router basename="/">
-        <RouteContainer />
+        <Container />
       </Router>
     );
   }
 }
 
-function RouteContainer() {
-  return (
-    <TransitionGroup>
-      <CSSTransition
-        timeout={{ enter: 300, exit: 300 }}
-        classNames={'fade'}
-      >
-        <Switch>
-          <Route path="/experience">
-            <Experience />
-          </Route>
-          <Route path="/portfolio">
-            <Portfolio />
-          </Route>
-          <Route path="/">
-            <About />
-          </Route>
-        </Switch>
-      </CSSTransition>
-    </TransitionGroup>
-  );
+class Container extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {date: new Date()};
+  // }
+
+  render() {
+    this.setState({});
+    return (
+      <div className="color1 container">
+        <div className="color2 inner">
+          <div className="vertical">
+            <NavigationBar />
+            <h1 className="text_color1 title">Experience</h1>
+          </div>
+          <p className="info">
+            Coming soon...
+          </p>
+          <SocialBar />
+        </div>
+      </div>
+
+
+      <TransitionGroup>
+        <CSSTransition
+          timeout={{ enter: 300, exit: 300 }}
+          classNames={'fade'}
+        >
+          <Switch>
+            <Route path="/experience">
+              <Experience />
+            </Route>
+            <Route path="/portfolio">
+              <Portfolio />
+            </Route>
+            <Route path="/">
+              <About />
+            </Route>
+          </Switch>
+        </CSSTransition>
+      </TransitionGroup>
+    );
+  }
 }
 
 
@@ -103,14 +125,6 @@ class SocialBar extends React.Component {
 
 class About extends React.Component {
   render() {
-    const isMobile = window.innerWidth <= 720;
-
-    // if (!isMobile) {
-    //   document.getElementById("root").style.justifyContent = "start";
-    // }
-    // else {
-    // }
-
     return (
       <div className="color1 container">
         <div className="color2 inner">

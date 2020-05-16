@@ -86,7 +86,7 @@ class NavigationBar extends React.Component {
           className="text_color1 clickable navi_button"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://drive.google.com/open?id=1gxt6W-gEsK1tu5ikDbddddwjn1tme1Rl"
+          href="https://drive.google.com/open?id=1gxt6W-gEsK1tu5ikDbddfdwjn1tme1Rl"
         >Resume</a>
       </div>
     );

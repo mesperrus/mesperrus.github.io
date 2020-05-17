@@ -44,9 +44,17 @@ class Container extends React.Component {
             <NavigationBar />
             <h1 className="text_color1 title">Experience</h1>
           </div>
-          <p className="info">
-            Coming soon...
-          </p>
+          <Switch>
+            <Route path="/experience">
+              <Experience />
+            </Route>
+            <Route path="/portfolio">
+              <Portfolio />
+            </Route>
+            <Route path="/">
+              <About />
+            </Route>
+          </Switch>
           <SocialBar />
         </div>
       </div>

@@ -23,45 +23,34 @@ export default class App extends React.Component {
   render() {
     return (
       <Router basename="/">
-        <Container />
+        <Switch>
+          <Route path="/experience">
+            <Container page="Experience" />
+          </Route>
+          <Route path="/portfolio">
+            <Container page="Portfolio" />
+          </Route>
+          <Route path="/">
+            <Container page="Mesa Perry" />
+          </Route>
+        </Switch>
       </Router>
     );
   }
 }
 
 class Container extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {date: new Date()};
-  // }
-
   render() {
-    // this.setState({});
     return (
       <div className="color1 container">
         <div className="color2 inner">
           <div className="vertical">
             <NavigationBar />
-            <h1 className="text_color1 title">Experience</h1>
+            <h1 className="text_color1 title">{this.props.page}</h1>
           </div>
-          <TransitionGroup>
-            <CSSTransition
-              timeout={{ enter: 300, exit: 300 }}
-              classNames={'fade'}
-            >
-              <Switch>
-                <Route path="/experience">
-                  <Experience />
-                </Route>
-                <Route path="/portfolio">
-                  <Portfolio />
-                </Route>
-                <Route path="/">
-                  <About />
-                </Route>
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
+          {this.props.page==="Mesa Perry" && <About />}
+          {this.props.page==="Experience" && <Experience />}
+          {this.props.page==="Portfolio" && <Portfolio />}
           <SocialBar />
         </div>
       </div>

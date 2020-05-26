@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 // import logo from './logo.svg';
 import './App.css';
@@ -22,19 +17,35 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Router basename="/">
-        <Switch>
-          <Route path="/experience">
-            <Container page="Experience" />
-          </Route>
-          <Route path="/portfolio">
-            <Container page="Portfolio" />
-          </Route>
-          <Route path="/">
-            <Container page="Mesa Perry" />
-          </Route>
-        </Switch>
-      </Router>
+      <BrowserRouter basename="/">
+        <Route render={({ location }) => {
+          const { pathname, key } = location
+
+          return (
+            <TransitionGroup component={null}>
+              <CSSTransition
+                key={key}
+                appear={true}
+                onEnter={(node, appears) => play(pathname, node, appears)}
+                timeout={{enter: 750, exit: 0}}
+              >
+                <Switch location={location}>
+                  <Route path="/experience">
+                    <Container page="Experience" />
+                  </Route>
+                  <Route path="/portfolio">
+                    <Container page="Portfolio" />
+                  </Route>
+                  <Route path="/">
+                    <Container page="Mesa Perry" />
+                  </Route>
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )
+        }}/>
+
+      </BrowserRouter>
     );
   }
 }
